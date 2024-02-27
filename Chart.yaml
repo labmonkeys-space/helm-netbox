@@ -1,0 +1,22 @@
+---
+apiVersion: v2
+name: netbox
+version: 1.0.0
+appVersion: v3.7.3-2.8.0
+kubeVersion: ">=1.25.0"
+description: IP address management (IPAM) and data center infrastructure management (DCIM) tool.
+icon: https://raw.githubusercontent.com/netbox-community/netbox/develop/docs/netbox_logo.png
+type: application
+maintainers:
+  - email: container@no42.org
+    name: Ronny Trommer
+    url: https://blog.no42.org
+dependencies:
+  - condition: postgresql.enabled
+    name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: ^14.2.3
+  - condition: redis.enabled
+    name: redis
+    repository: https://charts.bitnami.com/bitnami
+    version: ^18.17.0
